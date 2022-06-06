@@ -1,0 +1,38 @@
+Proceso ConstruccionModelosAvionesyCarros
+	Definir numerodecubos,numeroderuedas,numerodeautos,numerodeaviones,resultadoruedascarro,resultadocuboscarro,resultadoruedasavion,resultadocubosavion Como Real;
+	Escribir 'Ingrese el número de cubos disponibles: ';
+	Leer numerodecubos;
+	Escribir 'Ingrese el número de ruedas disponibles: ';
+	Leer numeroderuedas;
+	resultadoruedascarro <- trunc(numeroderuedas/4);
+	resultadocuboscarro <- trunc(numerodecubos/10);
+	resultadoruedasavion <- trunc(numeroderuedas/2);
+	resultadocubosavion <- trunc(numerodecubos/15);
+	Si resultadoruedascarro<=resultadocuboscarro Entonces
+		numerodeautos <- trunc(numeroderuedas/4);
+	SiNo
+		numerodeautos <- trunc(numerodecubos/10);
+	FinSi
+	Si resultadoruedasavion<=resultadocubosavion Entonces
+		numerodeaviones <- trunc(numeroderuedas/2);
+	SiNo
+		numerodeaviones <- trunc(numerodecubos/15);
+	FinSi
+	Si numerodeaviones=0 Y numerodeautos=0 Entonces
+		Escribir 'Tipo de modelo que conviene construir: Ninguno';
+		Escribir 'Número posible de construcción: ',numerodeaviones;
+	SiNo
+		Si numerodeaviones=numerodeautos Entonces
+			Escribir 'Tipo de modelo que conviene construir: Autos o Aviones';
+			Escribir 'Número posible de construcción: ',numerodeaviones;
+		SiNo
+			Si numerodeaviones>numerodeautos Entonces
+				Escribir 'Tipo de modelo que conviene construir: Aviones';
+				Escribir 'Número posible de construcción: ',numerodeaviones;
+			SiNo
+				Escribir 'Tipo de modelo que conviene construir: Autos';
+				Escribir 'Número posible de construcción: ',numerodeautos;
+			FinSi
+		FinSi
+	FinSi
+FinProceso
