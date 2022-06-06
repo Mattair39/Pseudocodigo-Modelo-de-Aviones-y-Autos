@@ -1,0 +1,17 @@
+Proceso BilleteFerrocarril
+	
+	Definir distanciaida,distanciatotal,tiempoestancia, precioboleto Como Real;
+	Escribir "Ingrese Distancia de Ida del Viaje (en km): ";
+	Leer distanciaida;
+	distanciatotal<-(distanciaida*2);
+	Escribir "Distancia Total del Viaje: ", distanciatotal, " km";
+	Escribir "Tiempo de Estancia (en dias): ";
+	Leer tiempoestancia;
+	Si distanciatotal > 500 y tiempoestancia > 10 Entonces
+		precioboleto<-(distanciatotal*0.19)*0.80;
+	SiNo
+		precioboleto<-(distanciatotal*0.19);
+	FinSi
+	Escribir "Precio del Boleto: ", precioboleto, " dolares";
+	
+FinProceso
